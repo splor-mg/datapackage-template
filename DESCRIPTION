@@ -1,0 +1,5 @@
+Package: Dependencies
+Imports:
+    renv,
+    data.table
+Encoding: UTF-8
