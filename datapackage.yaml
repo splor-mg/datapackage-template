@@ -1,0 +1,18 @@
+name: template
+foo: 'title'
+resources:
+  - name: acoes_planejamento
+    path: data/acoes_planejamento.csv
+    format: csv
+    schema: schemas/acoes_planejamento.yaml
+    sources:
+      - name: acoes_planejamento
+        title: Relatórios e Bases do Planejamento - Ações
+        path: https://www.sigplan.mg.gov.br/BasesTxt/acoes_planejamento.txt
+        link: https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined
+        format: csv
+        encoding: windows-1252
+        dialect:
+          csv:
+            delimiter: '|'
+        schema: schemas/sources/acoes_planejamento.yaml

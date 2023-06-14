@@ -1,0 +1,151 @@
+fields:
+  - name: programa_cod
+    type: integer
+    title: Código do Programa
+  - name: programa_desc
+    type: string
+    title: Nome do Programa
+  - name: area_tematica_cod
+    type: string
+    title: Código da Área Temática
+  - name: area_tematica_desc
+    type: string
+    title: Área Temática
+  - name: exclusao_logica_do_programa
+    type: string
+    title: Exclusão Lógica do Programa
+    description: |
+      Identifica se o programa foi excluído do planejamento, porém continua existindo dentro da base para critérios de histórico e consolidação.
+  - name: programa_novo
+    type: string
+    title: Programa Novo
+  - name: justificativa_de_inclusao_ou_exclusao_do_programa
+    type: string
+    title: Justificativa de Inclusão ou Exclusão do Programa
+    description: |
+      Informa o motivo pelo qual o programa foi incluído ou excluído no PPAG a partir das revisões anuais ou emendas parlamentares.
+      
+      Ex.: Programa incluído por emenda parlamentar.
+  - name: uo_programa_cod
+    type: integer
+    title: Código da Unidade Orçamentária Responsável pelo Programa
+  - name: uo_programa_nome
+    type: string
+    title: Unidade Orçamentária Responsável pelo Programa
+  - name: uo_acao_cod
+    type: integer
+    title: Código da Unidade Orçamentária Responsável pela Ação
+  - name: uo_acao_nome
+    type: string
+    title: Unidade Orçamentária Responsável pela Ação
+  - name: codigo_da_funcao
+    type: integer
+    title: Código da Função
+  - name: funcao
+    type: string
+    title: Função
+  - name: codigo_da_subfuncao
+    type: integer
+    title: Código da Subfunção
+  - name: subfuncao
+    type: string
+    title: Subfunção
+  - name: codigo_do_tipo_de_acao
+    type: integer
+    title: Código do Tipo de Ação
+  - name: tipo_de_acao
+    type: string
+    title: Tipo de Ação
+  - name: acao_cod
+    type: integer
+    title: Código da Ação
+  - name: titulo_da_acao
+    type: string
+    title: Título da Ação
+  - name: codigo_do_identificador_de_acao_governamental_iag
+    type: integer
+    title: Código do Identificador de Ação Governamental (IAG)
+  - name: identificador_de_acao_governamental_iag
+    type: string
+    title: Identificador de Ação Governamental (IAG)
+  - name: codigo_do_projeto_estrategico
+    type: string
+    title: Código do Projeto Estratégico
+  - name: projeto_estrategico
+    type: string
+    title: Projeto Estratégico
+  - name: exclusao_logica_da_acao
+    type: string
+    title: Exclusão Lógica da Ação
+  - name: nova_acao
+    type: string
+    title: Nova Ação
+  - name: justificativa_de_inclusao_ou_exclusao_da_acao
+    type: string
+    title: Justificativa de Inclusão ou Exclusão da Ação
+  - name: transferida_para_o_sisor
+    type: string
+    title: Transferida para o SISOR
+  - name: unidade_administrativa_responsavel_pela_acao
+    type: string
+    title: Unidade Administrativa Responsável pela Ação
+  - name: base_legal
+    type: string
+    title: Base legal
+  - name: finalidade_da_acao
+    type: string
+    title: Finalidade da Ação
+  - name: descricao_da_acao
+    type: string
+    title: Descrição da Ação
+  - name: codigo_do_publico_alvo
+    type: integer
+    title: Código do Público-alvo
+  - name: publico_alvo
+    type: string
+    title: Público-Alvo
+  - name: codigo_do_produto
+    type: integer
+    title: Código do Produto
+  - name: produto
+    type: string
+    title: Produto
+  - name: especificacao_do_produto
+    type: string
+    title: Especificação do Produto
+  - name: codigo_da_unidade_de_medida_do_produto
+    type: integer
+    title: Código da Unidade de Medida do Produto
+  - name: unidade_de_medida_do_produto
+    type: string
+    title: Unidade de Medida do Produto
+  - name: previsao_orcamentaria_2023
+    type: integer
+    title: Previsão Orçamentária 2023
+  - name: previsao_orcamentaria_2024
+    type: integer
+    title: Previsão Orçamentária 2024
+  - name: previsao_orcamentaria_2025
+    type: integer
+    title: Previsão Orçamentária 2025
+  - name: previsao_orcamentaria_2026
+    type: integer
+    title: Previsão Orçamentária 2026
+  - name: previsao_fisica_2023
+    type: integer
+    title: Previsão Física 2023
+  - name: previsao_fisica_2024
+    type: integer
+    title: Previsão Física 2024
+  - name: previsao_fisica_2025
+    type: integer
+    title: Previsão Física 2025
+  - name: previsao_fisica_2026
+    type: integer
+    title: Previsão Física 2026
+  - name: acao_transposta
+    type: string
+    title: Ação Transposta
+  - name: setor_de_governo
+    type: string
+    title: Setor de Governo
