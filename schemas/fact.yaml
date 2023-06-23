@@ -10,6 +10,7 @@ fields:
     type: number
     decimalChar: ','
     groupChar: '.'
+    bareNumber: false
   - name: hist
     title: Histórico
     type: string
