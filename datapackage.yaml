@@ -1,18 +1,31 @@
 name: template
 foo: 'title'
 resources:
-  - name: acoes_planejamento
-    path: data/acoes_planejamento.csv
+  - name: fact
+    path: data/fact.csv
     format: csv
-    schema: schemas/acoes_planejamento.yaml
+    encoding: utf-8
+    schema: schemas/fact.yaml
     sources:
-      - name: acoes_planejamento
-        title: Relatórios e Bases do Planejamento - Ações
-        path: https://www.sigplan.mg.gov.br/BasesTxt/acoes_planejamento.txt
-        link: https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined
+      - name: fact
+        path: data/raw/fact.txt
         format: csv
         encoding: windows-1252
         dialect:
           csv:
             delimiter: '|'
-        schema: schemas/sources/acoes_planejamento.yaml
+        schema: schemas/raw/fact.yaml
+  - name: dim
+    path: data/dim.csv
+    format: csv
+    encoding: utf-8
+    schema: schemas/dim.yaml
+    sources:
+      - name: dim
+        path: data/raw/dim.txt
+        format: csv
+        encoding: windows-1252
+        dialect:
+          csv:
+            delimiter: '|'
+        schema: schemas/raw/dim.yaml

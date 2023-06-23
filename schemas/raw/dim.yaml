@@ -1,0 +1,13 @@
+fields:
+  - name: Unidade Orçamentária - Código
+    type: integer
+  - name: Unidade Orçamentária - Descrição
+    type: string
+  - name: Vigente?
+    type: string
+  - name: Início da vigência
+    type: string
+  - name: Fim da vigência
+    type: string
+  - name: Data de Atualização
+    type: string

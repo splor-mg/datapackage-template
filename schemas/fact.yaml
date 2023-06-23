@@ -1,0 +1,17 @@
+fields:
+  - name: id
+    title: Número Empenho
+    type: integer
+  - name: uo_cod
+    title: Unidade Orçamentária - Código
+    type: integer
+  - name: vl_emp
+    title: Valor Despesa Empenhada
+    type: number
+    decimalChar: ','
+    groupChar: '.'
+  - name: hist
+    title: Histórico
+    type: string
+    missingValues: 
+      - 'NA'

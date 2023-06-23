@@ -1,0 +1,24 @@
+fields:
+  - name: uo_cod
+    title: Unidade Orçamentária - Código
+    type: integer
+  - name: uo_desc
+    title: Unidade Orçamentária - Descrição
+    type: string
+  - name: valid
+    title: Vigente?
+    type: boolean
+    trueValues: ['Sim']
+    falseValues: ['Não']
+  - name: valid_from
+    title: Início da vigência
+    type: date
+    format: '%d/%m/%Y'
+  - name: valid_to
+    title: Fim da vigência
+    type: date
+    format: '%d/%m/%Y'
+  - name: updated_at
+    title: Data de Atualização
+    type: datetime
+    format: '%d/%m/%Y %H:%M:%S'

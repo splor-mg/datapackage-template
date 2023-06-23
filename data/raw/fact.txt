@@ -1,0 +1,4 @@
+Número Empenho|Unidade Orçamentária - Código|Valor Despesa Empenhada|Histórico
+1|1501|120|"Diárias de Viagem"
+2|1251|1.000,5|NA
+3|1251|R$ 2.000,5|

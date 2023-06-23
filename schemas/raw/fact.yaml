@@ -1,0 +1,9 @@
+fields:
+  - name: Número Empenho
+    type: integer
+  - name: Unidade Orçamentária - Código
+    type: integer
+  - name: Valor Despesa Empenhada
+    type: string
+  - name: Histórico
+    type: string
