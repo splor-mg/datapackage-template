@@ -2,6 +2,8 @@ fields:
   - name: uo_cod
     title: Unidade Orçamentária - Código
     type: integer
+    constraints:
+      required: true
   - name: uo_desc
     title: Unidade Orçamentária - Descrição
     type: string
@@ -22,3 +24,7 @@ fields:
     title: Data de Atualização
     type: datetime
     format: '%d/%m/%Y %H:%M:%S'
+primaryKey:
+  - uo_cod
+  - valid_from
+  - valid_to

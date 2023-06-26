@@ -16,3 +16,12 @@ fields:
     type: string
     missingValues: 
       - 'NA'
+primaryKey:
+  - id
+foreignKeys:
+  - fields:
+      - uo_cod
+    reference:
+      fields:
+        - uo_cod
+      resource: dim
