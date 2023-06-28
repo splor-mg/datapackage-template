@@ -8,7 +8,7 @@ all: transform check load
 transform: $(BUILD_FILES)
 
 $(BUILD_FILES): build/%.csv: data/%.txt schemas/%.yaml scripts/transform.py datapackage.yaml
-	python scripts/transform.py $*
+	python scripts/transform.py $* $@
 
 check: checks-python checks-rstats
 
