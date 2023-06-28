@@ -1,13 +1,15 @@
-.PHONY: all transform check load
+.PHONY: all transform check
 
+EXT = txt
+OUTPUT_DIR = build
 RESOURCE_NAMES := $(shell yq e '.resources[].name' datapackage.yaml)
 BUILD_FILES := $(addsuffix .csv,$(addprefix build/,$(RESOURCE_NAMES)))
 
-all: transform check load
+all: transform check
 
 transform: $(BUILD_FILES)
 
-$(BUILD_FILES): build/%.csv: data/%.txt schemas/%.yaml scripts/transform.py datapackage.yaml
+$(BUILD_FILES): $(OUTPUT_DIR)/%.csv: data/%.$(EXT) schemas/%.yaml scripts/transform.py datapackage.yaml
 	python scripts/transform.py $* $@
 
 check: checks-python checks-rstats
@@ -17,7 +19,3 @@ checks-python:
 
 checks-rstats:
 	Rscript checks/rstats/testthat.R
-
-load: 
-	find build -type f | xargs rm
-	python scripts/load.py
