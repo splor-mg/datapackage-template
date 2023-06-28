@@ -2,13 +2,13 @@ name: template
 foo: 'title'
 resources:
   - name: fact
-    path: data/fact.txt
+    path: data-raw/fact.txt
     format: csv
     encoding: windows-1252
     dialect: dialect.yaml
     schema: schemas/fact.yaml
   - name: dim
-    path: data/dim.txt
+    path: data-raw/dim.txt
     format: csv
     encoding: windows-1252
     dialect: dialect.yaml

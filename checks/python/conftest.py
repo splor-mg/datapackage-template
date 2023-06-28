@@ -13,7 +13,7 @@ def db(package):
     for resource in package.resource_names:
         _sql = f"""
         CREATE TABLE '{resource}' AS 
-        SELECT * FROM read_csv_auto('build/{resource}.csv')
+        SELECT * FROM read_csv_auto('data/{resource}.csv')
         """
         conn.execute(_sql)
     
