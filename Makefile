@@ -1,4 +1,4 @@
-.PHONY: all transform check build
+.PHONY: all extract transform check build publish
 
 EXT = txt
 INPUT_DIR = data-raw
@@ -22,7 +22,7 @@ checks-rstats:
 	Rscript checks/rstats/testthat.R
 
 build:
-	python scripts/build.py build-config.json $(OUTPUT_DIR)
+	python scripts/build.py $(OUTPUT_DIR)
 
 print: 
 	@echo $(OUTPUT_FILES)
