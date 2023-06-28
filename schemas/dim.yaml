@@ -1,30 +1,30 @@
 fields:
-  - name: uo_cod
-    title: Unidade Orçamentária - Código
+  - name: Unidade Orçamentária - Código
+    title: uo_cod
     type: integer
     constraints:
       required: true
-  - name: uo_desc
-    title: Unidade Orçamentária - Descrição
+  - name: Unidade Orçamentária - Descrição
+    title: uo_desc
     type: string
-  - name: valid
-    title: Vigente?
+  - name: Vigente?
+    title: valid
     type: boolean
     trueValues: ['Sim']
     falseValues: ['Não']
-  - name: valid_from
-    title: Início da vigência
+  - name: Início da vigência
+    title: valid_from
     type: date
     format: '%d/%m/%Y'
-  - name: valid_to
-    title: Fim da vigência
+  - name: Fim da vigência
+    title: valid_to
     type: date
     format: '%d/%m/%Y'
-  - name: updated_at
-    title: Data de Atualização
+  - name: Data de Atualização
+    title: updated_at
     type: datetime
     format: '%d/%m/%Y %H:%M:%S'
 primaryKey:
-  - uo_cod
-  - valid_from
-  - valid_to
+  - Unidade Orçamentária - Código
+  - Início da vigência
+  - Fim da vigência

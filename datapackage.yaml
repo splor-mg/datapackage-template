@@ -2,30 +2,14 @@ name: template
 foo: 'title'
 resources:
   - name: fact
-    path: data/fact.csv
+    path: data/fact.txt
     format: csv
-    encoding: utf-8
+    encoding: windows-1252
+    dialect: dialect.yaml
     schema: schemas/fact.yaml
-    sources:
-      - name: fact
-        path: data/raw/fact.txt
-        format: csv
-        encoding: windows-1252
-        dialect:
-          csv:
-            delimiter: '|'
-        schema: schemas/raw/fact.yaml
   - name: dim
-    path: data/dim.csv
+    path: data/dim.txt
     format: csv
-    encoding: utf-8
+    encoding: windows-1252
+    dialect: dialect.yaml
     schema: schemas/dim.yaml
-    sources:
-      - name: dim
-        path: data/raw/dim.txt
-        format: csv
-        encoding: windows-1252
-        dialect:
-          csv:
-            delimiter: '|'
-        schema: schemas/raw/dim.yaml

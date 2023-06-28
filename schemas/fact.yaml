@@ -1,27 +1,27 @@
 fields:
-  - name: id
-    title: Número Empenho
+  - name: Número Empenho
+    title: id
     type: integer
-  - name: uo_cod
-    title: Unidade Orçamentária - Código
+  - name: Unidade Orçamentária - Código
+    title: uo_cod
     type: integer
-  - name: vl_emp
-    title: Valor Despesa Empenhada
+  - name: Valor Despesa Empenhada
+    title: vl_emp
     type: number
     decimalChar: ','
     groupChar: '.'
     bareNumber: false
-  - name: hist
-    title: Histórico
+  - name: Histórico
+    title: hist
     type: string
     missingValues: 
       - 'NA'
 primaryKey:
-  - id
+  - Número Empenho
 foreignKeys:
   - fields:
-      - uo_cod
+      - Unidade Orçamentária - Código
     reference:
       fields:
-        - uo_cod
+        - Unidade Orçamentária - Código
       resource: dim
