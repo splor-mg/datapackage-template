@@ -4,7 +4,7 @@ from datetime import datetime
 import typer
 
 def main(output_path: Path, descriptor: str = 'datapackage.yaml'):
-    package = Package('datapackage.yaml')
+    package = Package(descriptor)
     
     output_descriptor = {
         "profile": "tabular-data-package",
