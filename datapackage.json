@@ -1,0 +1,22 @@
+{
+  "profile": "tabular-data-package",
+  "name": "template",
+  "resources": [
+    {
+      "profile": "tabular-data-resource",
+      "name": "dim",
+      "path": "build/dim.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {"fields": []}
+    },
+    {
+      "profile": "tabular-data-resource",
+      "name": "fact",
+      "path": "build/fact.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {"fields": []}
+    }
+  ]
+}

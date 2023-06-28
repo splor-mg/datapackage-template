@@ -1,0 +1,83 @@
+{
+  "name": "template",
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "dim",
+      "type": "table",
+      "profile": "tabular-data-resource",
+      "path": "dim.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:f5c3e531fe9c166747984a1d7746620d4160cb5a0829aab9261ae5a4239eba6b",
+      "bytes": 232,
+      "fields": 6,
+      "rows": 3,
+      "schema": {
+        "fields": [
+          {
+            "name": "uo_cod",
+            "type": "integer"
+          },
+          {
+            "name": "uo_desc",
+            "type": "string"
+          },
+          {
+            "name": "valid",
+            "type": "boolean"
+          },
+          {
+            "name": "valid_from",
+            "type": "date"
+          },
+          {
+            "name": "valid_to",
+            "type": "date"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fact",
+      "type": "table",
+      "profile": "tabular-data-resource",
+      "path": "fact.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:20c147c49f409ad00bee4d7f52ba832ef65ade806c2d7f09eb1e4658b58d2c8b",
+      "bytes": 86,
+      "fields": 4,
+      "rows": 3,
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "uo_cod",
+            "type": "integer"
+          },
+          {
+            "name": "vl_emp",
+            "type": "number"
+          },
+          {
+            "name": "hist",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "updated_at": "2023-06-28T14:39:50"
+}
