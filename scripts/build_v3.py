@@ -20,8 +20,10 @@ def normalize_package(descriptor):
         # map of old names to new names for lookups
         field_mapping = {}
         
+        schema = resource['schema']
+
         # update fields
-        for field in resource['schema']['fields']:
+        for field in schema['fields']:
             # if title exists, switch title and name
             if 'title' in field:
                 field['name'], field['title'] = field['title'], field['name']
@@ -33,14 +35,14 @@ def normalize_package(descriptor):
                     del field[key]
                     
         # update primary keys if necessary
-        if 'primaryKey' in resource['schema']:
-            for i, key in enumerate(resource['schema']['primaryKey']):
+        if 'primaryKey' in schema:
+            for i, key in enumerate(schema['primaryKey']):
                 if key in field_mapping:
-                    resource['schema']['primaryKey'][i] = field_mapping[key]
+                    schema['primaryKey'][i] = field_mapping[key]
 
         # update foreign keys if necessary
-        if 'foreignKeys' in resource['schema']:
-            for fk in resource['schema']['foreignKeys']:
+        if 'foreignKeys' in schema:
+            for fk in schema['foreignKeys']:
                 for i, field in enumerate(fk['fields']):
                     if field in field_mapping:
                         fk['fields'][i] = field_mapping[field]

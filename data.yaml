@@ -14,7 +14,6 @@ resources:
       fields:
         - name: Número Empenho
           type: integer
-          title: id
         - name: Unidade Orçamentária - Código
           type: integer
           title: uo_cod
@@ -38,6 +37,12 @@ resources:
             fields:
               - Unidade Orçamentária
             resource: dim
+        - fields:
+            - Número Empenho
+          reference:
+            fields:
+              - Identifier
+            resource: id
   - name: dim
     title: Tabela dimensão
     type: table
@@ -84,4 +89,10 @@ resources:
         - Unidade Orçamentária
         - Início da vigência
         - Fim da vigência
+  - name: id
+    schema:
+      fields:
+        - name: Identifier
+          title: uuid 
+          type: integer
 foo: title
