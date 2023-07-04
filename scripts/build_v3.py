@@ -4,17 +4,28 @@ from rich import print_json
 
 def normalize_package(descriptor):
     result = copy.deepcopy(descriptor)
-
+    result['profile'] = 'tabular-data-package'
     for resource in result['resources']:
+        
+        # keep only the specified properties
+        for key in list(resource.keys()):
+            if key not in ['name', 'title', 'description', 'schema']:
+                del resource[key]
+        
+        resource['path'] = f'data/{resource["name"]}.csv'
+        resource['format'] = 'csv'
+        resource['encoding'] = 'utf-8'
+        resource['profile'] = 'tabular-data-resource'
+        
         # map of old names to new names for lookups
-        mapping = {}
+        field_mapping = {}
         
         # update fields
         for field in resource['schema']['fields']:
             # if title exists, switch title and name
             if 'title' in field:
                 field['name'], field['title'] = field['title'], field['name']
-                mapping[field['title']] = field['name']
+                field_mapping[field['title']] = field['name']
 
             # keep only the specified properties
             for key in list(field.keys()):
@@ -24,15 +35,15 @@ def normalize_package(descriptor):
         # update primary keys if necessary
         if 'primaryKey' in resource['schema']:
             for i, key in enumerate(resource['schema']['primaryKey']):
-                if key in mapping:
-                    resource['schema']['primaryKey'][i] = mapping[key]
+                if key in field_mapping:
+                    resource['schema']['primaryKey'][i] = field_mapping[key]
 
         # update foreign keys if necessary
         if 'foreignKeys' in resource['schema']:
             for fk in resource['schema']['foreignKeys']:
                 for i, field in enumerate(fk['fields']):
-                    if field in mapping:
-                        fk['fields'][i] = mapping[field]
+                    if field in field_mapping:
+                        fk['fields'][i] = field_mapping[field]
 
                 # Fetch the resource specified in fk['reference']['resource']
                 ref_resource = next((r for r in descriptor['resources'] if r['name'] == fk['reference']['resource']), None)

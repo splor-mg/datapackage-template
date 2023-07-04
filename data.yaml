@@ -39,6 +39,7 @@ resources:
               - Unidade Orçamentária
             resource: dim
   - name: dim
+    title: Tabela dimensão
     type: table
     path: data-raw/dim.txt
     scheme: file
