@@ -1,6 +1,7 @@
 from pathlib import Path
 from frictionless import Package, Schema, transform, steps
 from datetime import datetime
+import json
 import typer
 
 def main(output_path: Path, descriptor: str = 'datapackage.yaml'):

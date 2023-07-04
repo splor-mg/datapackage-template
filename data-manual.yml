@@ -1,0 +1,72 @@
+name: template
+resources:
+  - name: fact
+    type: table
+    path: data-raw/fact.txt
+    scheme: file
+    format: csv
+    mediatype: text/csv
+    encoding: windows-1252
+    dialect:
+      csv:
+        delimiter: '|'
+    schema:
+      fields:
+        - name: id
+          type: integer
+          title: Número Empenho
+        - name: uo_cod
+          type: integer
+          title: Unidade Orçamentária - Código
+        - name: vl_emp
+          type: number
+          title: Valor Despesa Empenhada
+        - name: hist
+          type: string
+          title: Histórico
+      primaryKey:
+        - id
+      foreignKeys:
+        - fields:
+            - uo_cod
+          reference:
+            fields:
+              - uo
+            resource: dim
+  - name: dim
+    type: table
+    path: data-raw/dim.txt
+    scheme: file
+    format: csv
+    mediatype: text/csv
+    encoding: windows-1252
+    dialect:
+      csv:
+        delimiter: '|'
+    schema:
+      fields:
+        - name: uo
+          type: integer
+          title: Unidade Orçamentária
+          constraints:
+            required: true
+        - name: uo_desc
+          type: string
+          title: Unidade Orçamentária - Descrição
+        - name: valid
+          type: boolean
+          title: Vigente?
+        - name: valid_from
+          type: date
+          title: Início da vigência
+        - name: valid_to
+          type: date
+          title: Fim da vigência
+          description: 'This is a big and nice description'
+        - name: Data de Atualização
+          type: datetime
+      primaryKey:
+        - uo
+        - valid_from
+        - valid_to
+foo: title

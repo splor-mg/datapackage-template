@@ -1,0 +1,86 @@
+name: template
+resources:
+  - name: fact
+    type: table
+    path: data-raw/fact.txt
+    scheme: file
+    format: csv
+    mediatype: text/csv
+    encoding: windows-1252
+    dialect:
+      csv:
+        delimiter: '|'
+    schema:
+      fields:
+        - name: Número Empenho
+          type: integer
+          title: id
+        - name: Unidade Orçamentária - Código
+          type: integer
+          title: uo_cod
+        - name: Valor Despesa Empenhada
+          type: number
+          title: vl_emp
+          bareNumber: false
+          decimalChar: ','
+          groupChar: .
+        - name: Histórico
+          type: string
+          title: hist
+          missingValues:
+            - NA
+      primaryKey:
+        - Número Empenho
+      foreignKeys:
+        - fields:
+            - Unidade Orçamentária - Código
+          reference:
+            fields:
+              - Unidade Orçamentária
+            resource: dim
+  - name: dim
+    type: table
+    path: data-raw/dim.txt
+    scheme: file
+    format: csv
+    mediatype: text/csv
+    encoding: windows-1252
+    dialect:
+      csv:
+        delimiter: '|'
+    schema:
+      fields:
+        - name: Unidade Orçamentária
+          type: integer
+          title: uo
+          constraints:
+            required: true
+        - name: Unidade Orçamentária - Descrição
+          type: string
+          title: uo_desc
+        - name: Vigente?
+          type: boolean
+          title: valid
+          trueValues:
+            - Sim
+          falseValues:
+            - Não
+        - name: Início da vigência
+          type: date
+          title: valid_from
+          format: '%d/%m/%Y'
+        - name: Fim da vigência
+          type: date
+          title: valid_to
+          description: 'This is a big and nice description
+
+            '
+          format: '%d/%m/%Y'
+        - name: Data de Atualização
+          type: datetime
+          format: '%d/%m/%Y %H:%M:%S'
+      primaryKey:
+        - Unidade Orçamentária
+        - Início da vigência
+        - Fim da vigência
+foo: title

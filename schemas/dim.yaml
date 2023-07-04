@@ -20,8 +20,9 @@ fields:
     title: valid_to
     type: date
     format: '%d/%m/%Y'
+    description: |
+      This is a big and nice description
   - name: Data de Atualização
-    title: updated_at
     type: datetime
     format: '%d/%m/%Y %H:%M:%S'
 primaryKey:
