@@ -19,19 +19,39 @@
         "fields": [
           {
             "name": "id",
-            "type": "integer"
+            "type": "integer",
+            "title": "Número Empenho"
           },
           {
             "name": "uo_cod",
-            "type": "integer"
+            "type": "integer",
+            "title": "Unidade Orçamentária - Código"
           },
           {
             "name": "vl_emp",
-            "type": "number"
+            "type": "number",
+            "title": "Valor Despesa Empenhada"
           },
           {
             "name": "hist",
-            "type": "string"
+            "type": "string",
+            "title": "Histórico"
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "uo_cod"
+            ],
+            "reference": {
+              "fields": [
+                "uo_cod"
+              ],
+              "resource": "dim"
+            }
           }
         ]
       }
@@ -53,31 +73,47 @@
         "fields": [
           {
             "name": "uo_cod",
-            "type": "integer"
+            "type": "integer",
+            "title": "Unidade Orçamentária - Código",
+            "constraints": {
+              "required": true
+            }
           },
           {
             "name": "uo_desc",
-            "type": "string"
+            "type": "string",
+            "title": "Unidade Orçamentária - Descrição"
           },
           {
             "name": "valid",
-            "type": "boolean"
+            "type": "boolean",
+            "title": "Vigente?"
           },
           {
             "name": "valid_from",
-            "type": "date"
+            "type": "date",
+            "title": "Início da vigência"
           },
           {
             "name": "valid_to",
-            "type": "date"
+            "type": "date",
+            "title": "Fim da vigência",
+            "description": "This is a big and nice description\n"
           },
           {
-            "name": "updated_at",
+            "name": "Data de Atualização",
             "type": "datetime"
           }
-        ]
+        ],
+        "primaryKey": [
+          "uo_cod",
+          "valid_from",
+          "valid_to"
+        ],
+        "foreignKeys": []
       }
     }
   ],
-  "updated_at": "2023-06-28T20:02:14"
+  "foo": "title",
+  "updated_at": "2023-07-04T19:23:12"
 }
